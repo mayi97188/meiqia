@@ -1,4 +1,4 @@
 //$arr = ['oksvip.icu/', 'oksvip.icu/'];
-$arr = ['http://43.138.185.96:1001/', 'http://43.138.185.96:1001/'];
+$arr = ['https://ok1.oksvip.icu/', 'https://ok1.oksvip.icu/'];
 $i = Math.floor(Math.random() * $arr.length);
 dm = $arr[$i];
